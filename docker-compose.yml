@@ -1,0 +1,10 @@
+services:
+  briar:
+    build: .
+    container_name: briar-bot
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./data:/data
+

@@ -1,0 +1,2 @@
+"""Briar Bot application package."""
+
