@@ -6,6 +6,7 @@ from discord.ext import commands
 
 from app.bot.cogs.calendar import CalendarCog
 from app.bot.cogs.events import EventsCog
+from app.bot.cogs.help import HelpCog
 from app.bot.cogs.military import MilitaryCog
 from app.bot.cogs.settings import SettingsCog
 from app.bot.cogs.special import SpecialCog
@@ -31,6 +32,7 @@ class BriarBot(commands.Bot):
         await self.add_cog(CalendarCog(self))
         await self.add_cog(SpecialCog(self))
         await self.add_cog(SettingsCog(self))
+        await self.add_cog(HelpCog(self))
         if self.settings.dev_guild_id:
             guild = discord.Object(id=self.settings.dev_guild_id)
             self.tree.copy_global_to(guild=guild)
